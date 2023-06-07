@@ -3,17 +3,19 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        maxx=max(nums)
-        count=[0]*(maxx+1)
-        c=1
-        for i in range(len(nums)):
-            count[nums[i]]+=c
-        listt=[]
-        for i in range(len(count)):
-            x=[i]*count[i]
-            listt.extend(x)
-        for i in range(len(nums)):
-            nums[i]=listt[i]
+        holder0=0
+        holder2=len(nums)-1
+        seeker=0
+        while seeker<=holder2:
+            if nums[seeker]==0:
+                nums[seeker],nums[holder0]=nums[holder0],nums[seeker]
+                holder0+=1
+            elif nums[seeker]==2:
+                nums[seeker],nums[holder2]=nums[holder2],nums[seeker]
+                holder2-=1
+                seeker-=1
+            seeker+=1
+        return(nums)
 
 
         
