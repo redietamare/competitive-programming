@@ -8,10 +8,7 @@ class Solution:
         current=head
         while current and current.next:
             if current.val==current.next.val:
-                if current.next.next!=None:
-                    current.next=current.next.next  
-                else:
-                    current.next=None
+                current.next=current.next.next  
             else:
                 current=current.next
         return(head)
