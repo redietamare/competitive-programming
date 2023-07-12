@@ -11,3 +11,4 @@ class Solution:
             av=f"{average:.5f}"
             maxav=max(float(av),maxav)
         return(maxav)
+            
