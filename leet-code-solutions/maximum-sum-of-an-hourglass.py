@@ -7,9 +7,10 @@ class Solution:
         for i in range(rows-2):
             for j in range(cols-2):
                 summ = 0
-                summ += sum(grid[i][j:j+3])
-                summ += grid[i+1][j+1]
-                summ += sum(grid[i+2][j:j+3])
+                for r in range(i,i+3):
+                    for c in range(j,j+3):
+                        summ+=grid[r][c]
+                summ-=grid[i+1][j]
+                summ-=grid[i+1][j+2]
                 maxsum = max(maxsum,summ)
-                
         return maxsum
